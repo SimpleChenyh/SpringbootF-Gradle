@@ -1,2 +1,13 @@
 server:
   port: 8080
+
+
+spring:
+  jpa:
+    show-sql: true
+#  datasource:
+#    url: jdbc:mysql://chenyh.com:3306/bubble
+#    username: root
+#    password: Admin@9118507
+#    driver-class-name: com.mysql.jdbc.Driver
+

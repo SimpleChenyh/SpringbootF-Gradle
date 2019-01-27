@@ -19,7 +19,7 @@ buildscript {
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
-    id 'com.gradle.build-scan' version '1.16'
+    id 'com.gradle.build-scan' version '2.0.2'
     id 'org.springframework.boot' version '2.1.2.RELEASE'
     // Apply the application plugin to add support for building an application
     id 'application'
@@ -37,6 +37,11 @@ apply plugin: 'io.spring.dependency-management'
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'io.shardingsphere:sharding-jdbc-core:3.1.0'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.projectlombok:lombok-maven-plugin:1.18.4.0'
+    implementation 'commons-dbcp:commons-dbcp:1.4'
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // Use JUnit test framework

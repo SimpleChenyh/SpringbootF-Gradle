@@ -1,0 +1,23 @@
+dataSources:
+  ds0: !!org.apache.commons.dbcp.BasicDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://chenyh.com:3306/bubble
+    username: root
+    password:
+
+shardingRule:
+  tables:
+    user_device:
+      actualDataNodes: user_device_${2018..2019}
+      tableStrategy:
+        standard:
+          shardingColumn: report_date
+          preciseAlgorithmClassName: 'com.chenyh.config.algorithm.PreciseModuloTableShardingAlgorithm'
+      keyGeneratorColumnName: id
+  bindingTables:
+    - user_device
+  defaultTableStrategy:
+    none:
+
+props:
+  sql.show: true
