@@ -1,6 +1,6 @@
 dataSources:
   ds0: !!org.apache.commons.dbcp.BasicDataSource
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://chenyh.com:3306/bubble
     username: root
     password:
@@ -8,7 +8,7 @@ dataSources:
 shardingRule:
   tables:
     user_device:
-      actualDataNodes: user_device_${2018..2019}
+      actualDataNodes: ds0.user_device_${2018..2019}
       tableStrategy:
         standard:
           shardingColumn: report_date

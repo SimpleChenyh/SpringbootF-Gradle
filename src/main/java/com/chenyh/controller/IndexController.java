@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -24,12 +25,12 @@ public class IndexController {
     @RequestMapping
     @ResponseBody
     public List<Object> index(HttpServletRequest request) throws JsonProcessingException {
-        List<Object> result = userRepository.customizeNativeSQL(1);
-//        List<User> users = (List<User>) userRepository.findAll();
-//        JsonUtil.toJSONString(users);
-        List<Object> sqlResult = basicNativeSQLQuery.execNativeSQLReturnListResult("SELECT * FROM bubble.user");
+        List<Object> result = userRepository.customizeNativeSQL(2);
+////        List<User> users = (List<User>) userRepository.findAll();
+////        JsonUtil.toJSONString(users);
+        List<Object> sqlResult = basicNativeSQLQuery.execNativeSQLReturnListResult("SELECT * FROM user_device where report_date = '2018-02-01shrfsgfhdfghsfdghgfdhgfdhdhgffdhgdfhg'");
         System.out.println(JsonUtil.toJSONString(sqlResult));
-        return result;
+        return sqlResult;
     }
 
 }

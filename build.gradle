@@ -38,11 +38,12 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'javax.xml:jaxb-impl:2.1'
+    implementation 'javax.xml.bind:jaxb-api:2.1'
     implementation 'io.shardingsphere:sharding-jdbc-core:3.1.0'
     implementation 'mysql:mysql-connector-java'
     implementation 'org.projectlombok:lombok-maven-plugin:1.18.4.0'
     implementation 'commons-dbcp:commons-dbcp:1.4'
-//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
